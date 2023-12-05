@@ -98,7 +98,7 @@ app.post("/newstaff", function (req, res) {
         id: staffID,
         name: req.body.name,
         gender: req.body.gender,
-        location: req.body.location,
+        branch: req.body.location,
         services: services
     }
 
@@ -134,10 +134,10 @@ app.post("/editstaff/:id", function (req, res) {
     staffID = staff[staff.length - 1].id + 1;
 
     formInput = {
-        id: req.body.id,
+        id: parseInt(req.body.id),
         name: req.body.name,
         gender: req.body.gender,
-        location: req.body.location,
+        branch: req.body.location,
         services: services
     }
 
