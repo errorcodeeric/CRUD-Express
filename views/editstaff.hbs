@@ -1,0 +1,77 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<h1>Edit Staff</h1>
+<form method="post">
+    <input type="number" name="id" value="{{staffObj.id}}" style="display: none">
+
+
+    <table style="font-size: large !important;">
+        <tbody>
+            <tr>
+                <td class="formlabel">Name</td>
+                <td> <input type="text" name="name" class="form-control" value="{{staffObj.name}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">Gender</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="M" {{#eq staffObj.gender "M" }}checked{{/eq}}>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="F" {{#eq staffObj.gender "F" }}checked{{/eq}}>
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">Branch</td>
+                <td> <select id="locations" name="location" selected="{{staffObj.location}}">
+                        <option {{#eq staffObj.branch "Katong" }}selected="selected" {{/eq}} value="Katong">Katong
+                        </option>
+                        <option {{#eq staffObj.branch "Siglap" }}selected="selected" {{/eq}} value="Siglap">Siglap
+                        </option>
+                        <option {{#eq staffObj.branch "East Coast" }}selected="selected" {{/eq}} value="East Coast">East
+                            Coast</option>
+                        <option {{#eq staffObj.branch "Upper Changi" }}selected="selected" {{/eq}} value="Upper Changi">
+                            Upper Changi</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td class="formlabel">Services</td>
+                <td>
+                    <input type="checkbox" id="item0" name="services" value="item0" checked style="display: none">
+
+                    <input type="checkbox" id="footMassage" name="services" value="Foot Massage" {{#inArray
+                        staffObj.services "Foot Massage" }}checked{{/inArray}}>
+
+                    <label for="footMassage">Foot Massage</label><br>
+
+                    <input type="checkbox" id="bodyMassage" name="services" value="Body Massage" {{#inArray
+                        staffObj.services "Body Massage" }}checked{{/inArray}}>
+
+                    <label for="bodyMassage">Body Massage</label><br>
+
+                    <input type="checkbox" id="headShoulders" name="services" value="Head and Shoulders" {{#inArray
+                        staffObj.services "Head and Shoulders" }}checked{{/inArray}}>
+
+                    <label for="headShoulders">Head and Shoulders</label><br>
+
+                    <input type="checkbox" id="backMassage" name="services" value="Back Massage" {{#inArray
+                        staffObj.services "Back Massage" }}checked{{/inArray}}>
+
+                    <label for="backMassage">Back Massage</label><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary sm">
+        <a href="/" class="btn btn-danger sm" id="cancelButton">Cancel</a>
+    </div>
+
+    </div>
+</form>
+{{/block}}
+
+{{/extends}}

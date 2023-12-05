@@ -2,58 +2,62 @@
 
 {{#block "content"}}
 <h1> Create New Staff</h1>
-<form method="post"></form>
+<form method="post">
 
-<table style="font-size: large !important;">
-    <tbody>
-        <tr>
-            <td class="formlabel">Name</td>
-            <td> <input type="text" name="staffName" class="form-control">
-            </td>
-        </tr>
-        <tr>
-            <td class="formlabel">Gender</td>
-            <td>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label>
+    <table style="font-size: large !important;">
+        <tbody>
+            <tr>
+                <td class="formlabel">Name</td>
+                <td> <input type="text" name="name" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">Gender</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="M">
+                    <label for="male">Male</label>
 
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label>
-            </td>
-        </tr>
-        <tr>
-            <td class="formlabel">Branch</td>
-            <td> <select id="locations" name="locations">
-                    <option value="Katong">Katong</option>
-                    <option value="Siglap">Siglap</option>
-                    <option value="East Coast">East Coast</option>
-                    <option value="Upper Changi">Upper Changi</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td class="formlabel">Services</td>
-            <td><input type="checkbox" id="footMassage" name="footMassage" value="footMassage">
-                <label for="footMassage">Foot Massage</label><br>
+                    <input type="radio" id="female" name="gender" value="F" checked>
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="formlabel">Branch</td>
+                <td> <select id="locations" name="location">
+                        <option value="Katong">Katong</option>
+                        <option value="Siglap">Siglap</option>
+                        <option value="East Coast">East Coast</option>
+                        <option value="Upper Changi">Upper Changi</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td class="formlabel">Services</td>
+                <td>
+                    <input type="checkbox" id="item0" name="services" value="item0" checked style="display: none">
 
-                <input type="checkbox" id="bodyMassage" name="bodyMassage" value="bodyMassage">
-                <label for="bodyMassage">Body Massage</label><br>
+                    <input type="checkbox" id="footMassage" name="services" value="Foot Massage">
+                    <label for="footMassage">Foot Massage</label><br>
 
-                <input type="checkbox" id="headShoulders" name="headShoulders" value="headShoulders">
-                <label for="headShoulders">Head and Shoulders</label><br>
+                    <input type="checkbox" id="bodyMassage" name="services" value="Body Massage">
+                    <label for="bodyMassage">Body Massage</label><br>
 
-                <input type="checkbox" id="backMassage" name="backMassage" value="backMassage">
-                <label for="backMassage">Back Massage</label><br>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                    <input type="checkbox" id="headShoulders" name="services" value="Head and Shoulders">
+                    <label for="headShoulders">Head and Shoulders</label><br>
 
-<div class="text-center">
-<a href="save" class="btn btn-primary sm" id="saveButton">Save</a>
-<a href="/" class="btn btn-primary sm" id="cancelButton">Cancel</a>
-</div>
+                    <input type="checkbox" id="backMassage" name="services" value="Back Massage">
+                    <label for="backMassage">Back Massage</label><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-</div>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary sm">
+        <a href="/" class="btn btn-danger sm" id="cancelButton">Cancel</a>
+    </div>
+
+    </div>
+</form>
 {{/block}}
 
 {{/extends}}

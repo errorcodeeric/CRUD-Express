@@ -17,15 +17,17 @@
             </tr>
         </thead>
         <tbody>
-             {{#each staff}}
+            {{#each staff}}
             <tr>
                 <td class="text-center">{{this.name}}</td>
                 <td class="text-center">{{this.gender}}</td>
                 <td class="text-center">{{this.branch}}</td>
                 <td>{{this.services}}</td>
-                <td class="align-middle text-center"><a href="">Edit</a> <a href="/deletestaff">Delete</a></td>
+                <td class="align-middle text-center"><a href="/editstaff/{{this.id}}">Edit</a> <a
+                        href="/deletestaff/{{this.id}}">Delete</a></td>
             </tr>
-          
+            {{else}}
+            <h2 id="noitems"> No items to display.</h2>
             {{/each}}
 
         </tbody>
