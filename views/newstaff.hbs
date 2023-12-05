@@ -1,18 +1,59 @@
 {{#extends "base"}}
 
 {{#block "content"}}
-
+<h1> Create New Staff</h1>
 <form method="post"></form>
-    <div>
-        <label>Name</label>
-        <input type="text" name="staffName" class="form-control">
-    </div>
-    <div>
-        <label>Gender</label>
-        <input type="radio" name="gender" class="form-control" value="male"><label>Male</label>   
-        <input type="radio" name="gender" class="form-control" value="female"><label>Female</label>     
-  
-    </div>
+
+<table style="font-size: large !important;">
+    <tbody>
+        <tr>
+            <td class="formlabel">Name</td>
+            <td> <input type="text" name="staffName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td class="formlabel">Gender</td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="formlabel">Branch</td>
+            <td> <select id="locations" name="locations">
+                    <option value="Katong">Katong</option>
+                    <option value="Siglap">Siglap</option>
+                    <option value="East Coast">East Coast</option>
+                    <option value="Upper Changi">Upper Changi</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td class="formlabel">Services</td>
+            <td><input type="checkbox" id="footMassage" name="footMassage" value="footMassage">
+                <label for="footMassage">Foot Massage</label><br>
+
+                <input type="checkbox" id="bodyMassage" name="bodyMassage" value="bodyMassage">
+                <label for="bodyMassage">Body Massage</label><br>
+
+                <input type="checkbox" id="headShoulders" name="headShoulders" value="headShoulders">
+                <label for="headShoulders">Head and Shoulders</label><br>
+
+                <input type="checkbox" id="backMassage" name="backMassage" value="backMassage">
+                <label for="backMassage">Back Massage</label><br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center">
+<a href="save" class="btn btn-primary sm" id="saveButton">Save</a>
+<a href="/" class="btn btn-primary sm" id="cancelButton">Cancel</a>
+</div>
+
+</div>
 {{/block}}
 
-{{/extends}
+{{/extends}}

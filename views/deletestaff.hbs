@@ -1,0 +1,20 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<h1> Delete Staff</h1>
+
+<div id="deletecheck">
+<form method="post"></form>
+
+<H2 class="col-12"> Are you sure you want to delete {{this.name}} ? (This operation is irreversible.)</H2>
+
+<div>
+<a href="/" class="btn btn-danger sm" id="yesButton">Yes</a>
+<a href="/" class="btn btn-primary sm" id="noButton">No</a>
+</div>
+
+</div>
+
+{{/block}}
+
+{{/extends}}
